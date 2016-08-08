@@ -17,9 +17,13 @@
 # If the string length is less than 3, leave it unchanged.
 # Return the resulting string.
 def verbing(s):
-    # +++your code here+++
-    return
-
+    if len(s) < 3:
+        return s
+    else:
+        if s[-3:] == "ing":
+            return s + "ly"
+        else:
+            return s + "ing"
 
 # E. not_bad
 # Given a string, find the first appearance of the
@@ -30,9 +34,12 @@ def verbing(s):
 # So 'This dinner is not that bad!' yields:
 # This dinner is good!
 def not_bad(s):
-    # +++your code here+++
-    return
-
+    index = 0
+    not_index = s.find('not')
+    bad_index = s.find('bad')
+    if not_index != -1 and bad_index != -1 and not_index < bad_index:
+        return(s.replace(s[not_index:bad_index + 3], 'good'))
+    return s
 
 # F. front_back
 # Consider dividing a string into two halves.
@@ -41,10 +48,13 @@ def not_bad(s):
 # e.g. 'abcde', the front half is 'abc', the back half 'de'.
 # Given 2 strings, a and b, return a string of the form
 #  a-front + b-front + a-back + b-back
+import math
 def front_back(a, b):
-    # +++your code here+++
-    return
-
+    a_front = a[:math.ceil(len(a)/2)]
+    a_back = a[math.ceil(len(a)/2):]
+    b_front = b[:math.ceil(len(b)/2)]
+    b_back = b[math.ceil(len(b)/2):]
+    return a_front + b_front + a_back + b_back
 
 # Simple provided test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
