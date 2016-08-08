@@ -10,19 +10,32 @@
 #     - only lets the user guess five times
 #         - then ends the program
 ################################################################################
-# Imports
-
-
-# Body
-
-
-
+import random
+def rand_int():
+	rand_num = random.randint(1, 25)
+	n = 5
+	for count in range(n):
+		try:
+			user_inp = int(input("Guess the number: "))
+			if user_inp == rand_num:
+				print("Yay! You guessed the number correctly.")
+				break
+			elif user_inp > rand_num and user_inp <= 25:
+				print("Too high")
+			elif user_inp < rand_num and user_inp > 0:
+				print("Too low")
+			else:
+				print("Number not in the range of 1 to 25")			
+		except:
+			print("Nice try, enter a number")
+	else:
+		print("You are done with your guesses!")
 
 ################################################################################
 def main():
 
 
-    print("Hello World!") # Remove this and replace with your function calls
+    rand_int() # Remove this and replace with your function calls
     
 
 if __name__ == '__main__':
