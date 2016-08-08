@@ -17,18 +17,23 @@
 
 ###############################################################################
 # Imports
-
-
 # Body
-
+def count(word,ltr):
+	count = 0
+	for letter in word:
+		if letter == ltr:
+			count = count + 1
+	print("The letter", ltr, " appears", count, "times in", word)
 
 ###############################################################################
 def main():
 
     # Remove print("Hello World!") and add several functions calls to count()
     # below, passing various strings and letters
-    print("Hello World!")
-
+    count('Meghana','a')
+    count('Pluto','P')
+    count('Friends','i')
+    count('Fluffy','f')
 
 if __name__ == '__main__':
     main()
